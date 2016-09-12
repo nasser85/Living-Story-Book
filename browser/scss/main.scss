@@ -13,7 +13,12 @@ body {
     clear: both;
   }
 }
-
+.navbar {
+	a {
+		padding-left: 10px;
+	}
+	
+}
 #main {
   padding-top: 60px;
   margin: 0 auto;
@@ -21,10 +26,76 @@ body {
 video {
 
 	width: 100%;
+
 }
 
-#vid-container {
+.mini {
+	span {
+		font-size: 12px !important;
+	}
+	a {
+		font-size: 10px !important;
+	}
+	img {
+		height: 100px;
+		width: auto  !important;
+		max-width: 300px;
+		margin: auto !important;
+		overflow: hidden;
+	}
+}
+.book {
+	
+	height: 300px;
+	width: auto  !important;
+	max-width: 300px;
+	margin: auto !important;
+	overflow: hidden;
+}
+
+#create-page {
+	margin-top: -50px;
+	h3 {
+		margin-top: 0px;
+	}
+	input {
+		margin-top: 10%
+	}
+	a {
+		margin-bottom: 5%;
+	}
+	img {
+		width: 200px;
+		margin: auto;
+	}
+	slick {
+		div {
+			height: 200px;
+			overflow: hidden;
+		}
+	}
+	.card-image {
+		overflow: hidden;
+	}
+}
+.genre {
 	background-color: black;
+	height: 100px;
+	margin: 5%;
+	color: rgba(0, 0, 0, 0);
+	font-size: 20px;
+	text-align: center;
+	border-radius: 100%;
+	overflow: hidden;
+
+}
+.genre:hover {
+	color: rgba(0, 0, 0, 1);
+	background-image: url(bullseye.png) !important;
+
+}
+#vid-container {
+	background: #0091ea;
 	margin-top: -10%;
 	overflow: hidden;
 	height: 600px;
@@ -36,10 +107,20 @@ video {
 	position: absolute;
 	z-index: 3;
 	margin-top: 5%;
-
-		background-color: rgba(250, 250, 250, 0);
-		border-style: none;
-	
+	background-color: rgba(250, 250, 250, 0);
+	border-style: none;
+	h1 {
+		font-size: 90px;
+		text-align: center;
+	}
+	h5 {
+		font-size: 20px;
+		text-align: center;
+	}
+	a {
+		background-color: #0091ea;
+		width: 300px;
+	}
 }
 
 

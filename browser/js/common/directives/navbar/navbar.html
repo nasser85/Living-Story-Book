@@ -2,14 +2,12 @@
 
        <nav>
         <div class="nav-wrapper light-blue accent-4">
-          <a href="#" class="brand-logo">Living Story Book</a>
+          <a ui-sref="home" class="brand-logo">Living Story Book</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a ui-sref="create">Create</a></li>
             <li><a ui-sref="your">Your Stories</a></li>
             <li><a ui-sref="browse">Browse Stories</a></li>
             <li><a ng-if="isLoggedIn()" ng-click="logout()">Logout</a></li>
-            <li><a ng-if="!isLoggedIn()" ng-click="logout()">Login</a></li>
-            <li><a ng-if="!isLoggedIn()" ng-click="logout()">Sign Up</a></li>
           </ul>
         </div>
       </nav>
