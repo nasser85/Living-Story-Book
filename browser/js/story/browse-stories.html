@@ -1,9 +1,10 @@
 <div id="browse">
 	<div ng-repeat="books in genres" class="row">
 		<div ng-if="books.length" class="col s10 offset-s1">
-			<h4 class="center">{{books[0].genre}}</h4>
+			<h3 class="center">{{books[0].genre}}</h3>
 	      	<slick class="col s12" infinite="true" slides-to-show="3" slides-to-scroll="3">
-		          <div ng-repeat="book in books" class="card center z-depth-2 mini col s10 offset-s1" ui-sref="singleStory({storyId: book.id})">
+	      		<div ng-repeat="book in books" id="browse-book" >
+		          <div class="card center z-depth-2 mini col s10 offset-s1" ui-sref="singleStory({storyId: book.id})">
 		          	<div class="card-content">
 		            	<span class="card-title">{{book.title}}</span>
 		            </div>
@@ -14,6 +15,7 @@
 		              <a href="#">By {{book.author}}</a>
 		            </div>
 		          </div>
+		      </div>
 	          </slick>
 	      </div>
   	</div>
