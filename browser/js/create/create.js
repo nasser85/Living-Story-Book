@@ -18,7 +18,12 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state) {
 	}
 	$scope.pos = 0;
 	$scope.author = "anonymous"
+	$scope.images = [];
+	for (var i = 0; i < 47; i++) {
 
+		$scope.images.push(i.toString() + '.png');
+	}
+	
 
 	$scope.pages = [
 		{
@@ -27,7 +32,6 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state) {
 		}
 	];
 
-	$scope.myGenre = "none";
 	$scope.genres = [
 		{
 			type: 'Science Fiction',
@@ -58,18 +62,14 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state) {
 			image: 'children.jpg',
 		},
 		{
-			type: 'Adult',
+			type: 'Horror',
 			image: 'adult.jpg',
-		},
-		{
-			type: 'none',
-			image: 'none.jpg',
 		}
 	];
 
 	$scope.selectGenre = function(genre) {
-		$scope.myGenre = genre;
-		console.log($scope.myGenre);
+		$scope.newStory.genre = genre;
+		console.log($scope.newStory.genre);
 		$scope.pos ++;
 		window.scroll(0,0);
 	}

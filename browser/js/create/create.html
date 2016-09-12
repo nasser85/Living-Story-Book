@@ -53,13 +53,7 @@
       	<div class="row green lighten-4 z-depth-3">
       		<h6 class="col s12 center">Click an Image to Set as your Cover Art</h6>
       		<slick class="col s12" infinite="true" slides-to-show="1" slides-to-scroll="1">
-			  <div><img ng-click="selectCover('0.png')" class="center" src="0.png"></div>
-			  <div><img ng-click="selectCover('1.png')" class="center" src="1.png"></div>
-			  <div><img ng-click="selectCover('2.png')" class="center" src="2.png"></div>
-			  <div><img ng-click="selectCover('3.png')" class="center" src="3.png"></div>
-			  <div><img ng-click="selectCover('4.png')" class="center" src="4.png"></div>
-			  <div><img ng-click="selectCover('5.png')" class="center" src="5.png"></div>
-			  <div><img ng-click="selectCover('6.png')" class="center" src="6.png"></div>
+			  <div ng-repeat="image in images"><img ng-click="selectCover(image)" class="center" src="{{image}}"></div>
 			</slick>
 		</div>
       	<div class="row green lighten-4 z-depth-3">
@@ -90,13 +84,7 @@
       	<div class="row green lighten-4 z-depth-3">
       		<h6 class="col s12 center">Select an Image for Page {{pos-1}}</h6>
       		<slick class="col s12" infinite="true" slides-to-show="1" slides-to-scroll="1">
-			  <div><img ng-click="selectPageImage('0.png')" class="center" src="0.png"></div>
-			  <div><img ng-click="selectPageImage('1.png')" class="center" src="1.png"></div>
-			  <div><img ng-click="selectPageImage('2.png')" class="center" src="2.png"></div>
-			  <div><img ng-click="selectPageImage('3.png')" class="center" src="3.png"></div>
-			  <div><img ng-click="selectPageImage('4.png')" class="center" src="4.png"></div>
-			  <div><img ng-click="selectPageImage('5.png')" class="center" src="5.png"></div>
-			  <div><img ng-click="selectPageImage('6.png')" class="center" src="6.png"></div>
+			  <div ng-repeat="image in images"><img ng-click="selectPageImage(image)" class="center" src="{{image}}"></div>
 			</slick>
 		</div>
       	<div class="row green lighten-4 z-depth-3">
