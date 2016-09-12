@@ -3,8 +3,17 @@
 }
 
 body {
-  background: #0091ea;
+  background: black;
 }
+
+fullstack-logo {
+	img {
+		 width: 50px;
+		 margin-right: 5px;
+	}
+   
+}
+
 
 @mixin clearfix {
   &:after {
@@ -18,7 +27,9 @@ body {
 		padding-left: 10px;
 	}
 	
+	
 }
+
 #main {
   padding-top: 60px;
   margin: 0 auto;
@@ -54,8 +65,10 @@ video {
 }
 
 #create-page {
+
 	margin-top: -50px;
 	h3 {
+		color: #b388ff;
 		margin-top: 0px;
 	}
 	input {
@@ -122,11 +135,20 @@ video {
 	
 }
 #browse {
+	span {
+		font-size: 18px !important;
+	}
+	h3 {
+		color: #b388ff;
+	}
 	.card-image {
 		img {
 			height: 200px !important;
 		}
 		
+	}
+	#browse-book :hover {
+		font-size: 30px;
 	}
 }
 #greeting {
