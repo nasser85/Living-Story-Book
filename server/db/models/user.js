@@ -4,8 +4,13 @@ var _ = require('lodash');
 var Sequelize = require('sequelize');
 
 var db = require('../_db');
+var Story = require('./story')
 
 module.exports = db.define('user', {
+    name: {
+        type: Sequelize.STRING,
+        unique: true
+    },
     email: {
         type: Sequelize.STRING
     },
@@ -25,6 +30,9 @@ module.exports = db.define('user', {
         type: Sequelize.STRING
     }
 }, {
+    defaultScope: {
+        include: [Story]
+    },
     instanceMethods: {
         sanitize: function () {
             return _.omit(this.toJSON(), ['password', 'salt']);
