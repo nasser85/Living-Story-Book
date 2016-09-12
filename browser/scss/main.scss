@@ -72,6 +72,10 @@ video {
 		div {
 			height: 200px;
 			overflow: hidden;
+			img {
+				height: 200px;
+				width: auto;
+			}
 		}
 	}
 	.card-image {
@@ -100,7 +104,31 @@ video {
 	overflow: hidden;
 	height: 600px;
 }
-
+#single-story {
+	.row {
+		margin-top: -4%;
+	}
+	.read {
+		height: 520px;
+	}
+	.mini {
+		.card-image {
+			img {
+				height: 200px !important;
+			}
+			
+		}
+	}
+	
+}
+#browse {
+	.card-image {
+		img {
+			height: 200px !important;
+		}
+		
+	}
+}
 #greeting {
 	margin-left: 20%;
 	margin-right: 20%;
