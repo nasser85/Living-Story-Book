@@ -29,11 +29,23 @@
     <script src="/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/socket.io-client/socket.io.js"></script>
     <script src="/main.js"></script>
-
+    <script src='voicerss-tts.min.js'></script>
 </head>
 <body ng-app="FullstackGeneratedApp">
     <navbar></navbar>
     <div id="main" ui-view></div>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script>
+    var background = document.body;
+        
+        background.style.backgroundPosition = "700px, 700px";
+        var begin= new Date().getTime();
+        setInterval(function() {
+            var x= Math.floor((new Date().getTime()-begin)/25);
+            background.style.backgroundPositionY =  x +'px';
+           
+        }, 50);
+</script>
 </body>
+
 </html>

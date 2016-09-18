@@ -15,7 +15,7 @@
       </div>
       <div class="col s5 offset-s1">
       	<slick class="col s12" infinite="true" slides-to-show="1" slides-to-scroll="1">
-          <div ng-repeat="page in pages" class="card center z-depth-2 read">
+          <div ng-click="readAloud(page.content)" ng-repeat="page in pages" class="card center z-depth-2 read">
           	<div class="card-content">
             	<span class="card-title">Page {{pages.indexOf(page) + 1}}</span>
             </div>

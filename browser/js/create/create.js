@@ -19,7 +19,7 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state) {
 	$scope.pos = 0;
 	$scope.author = "anonymous"
 	$scope.images = [];
-	for (var i = 0; i < 47; i++) {
+	for (var i = 0; i < 94; i++) {
 
 		$scope.images.push(i.toString() + '.png');
 	}

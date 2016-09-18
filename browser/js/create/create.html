@@ -51,7 +51,7 @@
 
       <div ng-if="pos===1" class="col s4 offset-s2">
       	<div class="row green lighten-4 z-depth-3">
-      		<h6 class="col s12 center">Click an Image to Set as your Cover Art</h6>
+      		<h5 class="col s12 center">Click an Image to Set as your Cover Art</h5>
       		<slick class="col s12" infinite="true" slides-to-show="1" slides-to-scroll="1">
 			  <div ng-repeat="image in images"><img ng-click="selectCover(image)" class="center" src="{{image}}"></div>
 			</slick>
@@ -81,10 +81,10 @@
           </div>
       </div>
       <div ng-if="pos>1" class="col s4 offset-s1">
-      	<div class="row green lighten-4 z-depth-3">
-      		<h6 class="col s12 center">Select an Image for Page {{pos-1}}</h6>
-      		<slick class="col s12" infinite="true" slides-to-show="1" slides-to-scroll="1">
-			  <div ng-repeat="image in images"><img ng-click="selectPageImage(image)" class="center" src="{{image}}"></div>
+      	<div class="row green transparent">
+      		<h6 id="pics-title" class="col s12">Select an Image for Page {{pos-1}}</h6>
+      		<slick id="slick-pics" class="col s12" infinite="true" slides-to-show="3" slides-to-scroll="3">
+			  <div ng-repeat="image in images"><img ng-click="selectPageImage(image)" class="center col s10 offset-s1" src="{{image}}"></div>
 			</slick>
 		</div>
       	<div class="row green lighten-4 z-depth-3">

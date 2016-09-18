@@ -45,6 +45,17 @@ app.factory('StoryFactory', function($http, $state){
 		})
 	}
 
+	storyFactory.read = function(text) {
+		return $http.get('http://api.voicerss.org/?key=2e714518e6ba46dd9c4872900e88255c&hl=en-us&src=' + text)
+		.then (function (song) {
+			return song.data;
+		})
+		.then( function(songToPlay) {
+			console.log(songToPlay)
+			
+		})
+	}
+
 
 
 	return storyFactory;
