@@ -119,6 +119,29 @@ video {
 	}
 	.read {
 		height: 520px;
+		.play {
+			color: #6200ea;
+			margin-left: 40%;
+			margin-top: 50%;
+			position: absolute;
+			z-index: 10;
+			opacity: 0;
+		}
+	}
+	.read:hover {
+		span {
+			opacity: 0.5;
+		}
+		p {
+			opacity: 0.5;
+		}
+		img {
+			opacity: 0.5;
+		}
+		.play {
+			
+			opacity: 1;
+		}
 	}
 	.mini {
 		.card-image {
@@ -128,8 +151,30 @@ video {
 			
 		}
 	}
+	.author-pic {
+		img {
+		width: 100px;
+		border-radius: 100%;
+		}
+		h5 {
+			color: #b388ff;
+		}
+	}
+	.author-pic:hover {
+
+		img {
+			width: 150px;
+			border-radius: 100%;
+		}
+		h5 {
+			color: white;
+		}
+	}
+	
 	
 }
+
+
 
 #browse {
 	span {
@@ -238,6 +283,7 @@ video {
 	width:100%;
 	border-radius: 100%;
 }
+
 .transparent {
 	background-color: rgba(0, 0, 0, 0) !important;
 }
