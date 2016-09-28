@@ -1,7 +1,7 @@
 <div id="single-story">
 	<div class="row">
 		<div class="col s3">
-		<div class="card center z-depth-2 mini">
+		  <div class="card center z-depth-2 mini">
           	<div class="card-content">
             	<span class="card-title">{{newStory.title}}</span>
             </div>
@@ -9,13 +9,18 @@
               <img src="{{newStory.cover_url}}">
             </div>
             <div class="card-action">
-              <a href="#">By {{author}}</a>
+              <a href="#">By {{author.name}}</a>
             </div>
           </div>
       </div>
       <div class="col s5 offset-s1">
       	<slick class="col s12" infinite="true" slides-to-show="1" slides-to-scroll="1">
+          
           <div ng-click="readAloud(page.content)" ng-repeat="page in pages" class="card center z-depth-2 read">
+            <div class="play">
+            <i class="large material-icons">play_circle_outline</i>
+
+          </div>
           	<div class="card-content">
             	<span class="card-title">Page {{pages.indexOf(page) + 1}}</span>
             </div>
@@ -27,6 +32,10 @@
             </div>
           </div>
           </slick>
+      </div>
+      <div ui-sref="author({authorId: author.id})" class="author-pic center col s2 offset-s1">
+        <h5>View More by {{author.name}}</h5>
+        <img src="{{author.picture}}"></img>
       </div>
 	</div>
 </div>
