@@ -6,12 +6,17 @@ app.config(function ($stateProvider) {
         resolve: {
         	users: function(UserFactory) {
         		return UserFactory.fetchAll();
-        	}
+        	},
+            user: function(AuthService) {
+                return AuthService.getLoggedInUser();
+            }
         }
     });
 });
 
-app.controller('HomeCtrl', function($scope, users, $interval) {
+app.controller('HomeCtrl', function($scope, users, $interval, user) {
 	console.log(users);
-    
+    $scope.user = user
+    //console.log(user);
+    console.log("here it is", $scope.user)
 })

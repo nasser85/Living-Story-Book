@@ -4,15 +4,15 @@
 			<h3 class="center">{{books[0].genre}}</h3>
 	      	<slick class="col s12" infinite="true" slides-to-show="3" slides-to-scroll="3">
 	      		<div ng-repeat="book in books" id="browse-book" >
-		          <div class="card center z-depth-2 mini col s10 offset-s1 hoverable" ui-sref="singleStory({storyId: book.id})">
-		          	<div class="card-content">
+		          <div class="card center z-depth-2 mini col s10 offset-s1 hoverable" >
+		          	<div class="card-content" ui-sref="singleStory({storyId: book.id})">
 		            	<span class="card-title">{{book.title}}</span>
 		            </div>
-		            <div class="card-image">
+		            <div class="card-image" ui-sref="singleStory({storyId: book.id})">
 		              <img src="{{book.cover_url}}">
 		            </div>
-		            <div class="card-action">
-		              <a href="#">By {{book.author}}</a>
+		            <div class="card-action" ui-sref="author({authorId: book.authorId})">
+		              <a>By {{book.author}}</a>
 		            </div>
 		          </div>
 		      </div>
