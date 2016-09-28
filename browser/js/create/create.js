@@ -2,11 +2,16 @@ app.config(function ($stateProvider) {
     $stateProvider.state('create', {
         url: '/create',
         templateUrl: 'js/create/create.html',
-        controller: 'CreateCtrl'
+        controller: 'CreateCtrl',
+        resolve: {
+        	user: function(AuthService) {
+        		return AuthService.getLoggedInUser();
+        	}
+        }
     });
 });
 
-app.controller('CreateCtrl', function($scope, StoryFactory, $state) {
+app.controller('CreateCtrl', function($scope, StoryFactory, $state, user) {
 	$scope.messages = ["select a genre for your new story", "design the cover of your story book", "design your book's pages"]
 	$scope.newStory = {
 		title: "My New Story",
@@ -18,6 +23,11 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state) {
 	}
 	$scope.pos = 0;
 	$scope.author = "anonymous"
+	if (user) {
+		$scope.author = user.name;
+		$scope.newStory.userId = user.id; 
+	}
+	
 	$scope.images = [];
 	for (var i = 0; i < 94; i++) {
 

@@ -20,6 +20,7 @@ app.controller('BrowseStoriesCtrl', function($scope, authors) {
     $scope.authors.forEach(function(writer) {
         writer.stories.forEach(function(story) {
             story.author = writer.name;
+            story.authorId = writer.id;
             $scope.stories.push(story);
         })
     })
@@ -31,28 +32,5 @@ app.controller('BrowseStoriesCtrl', function($scope, authors) {
             return story.genre === genres[i];
         }))
     }
-    // $scope.scienceFiction = $scope.stories.filter(function(story) {
-    //     return story.genre === "Science Fiction";
-    // })
-    // $scope.realisticFiction = $scope.stories.filter(function(story) {
-    //     return story.genre === "Realistic Fiction";
-    // })
-    // $scope.nonfiction = $scope.stories.filter(function(story) {
-    //     return story.genre === "Nonfiction";
-    // })
-    // $scope.fantasy = $scope.stories.filter(function(story) {
-    //     return story.genre === "Fantasy";
-    // })
-    // $scope.romance = $scope.stories.filter(function(story) {
-    //     return story.genre === "Romance";
-    // })
-    // $scope.travel = $scope.stories.filter(function(story) {
-    //     return story.genre === "Travel";
-    // })
-    // $scope.children = $scope.stories.filter(function(story) {
-    //     return story.genre === "Children";
-    // })
-    // $scope.horror = $scope.stories.filter(function(story) {
-    //     return story.genre === "Horror";
-    // })
+    
 });

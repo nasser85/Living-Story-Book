@@ -16,7 +16,7 @@ module.exports = function (app, db) {
     };
 
     var verifyCallback = function (accessToken, refreshToken, profile, done) {
-
+        console.log('PROFILE here:>>>>>>>>>>>>>>>>>>>>>>>>>', profile);
         User.findOne({
                 where: {
                     google_id: profile.id
@@ -27,7 +27,10 @@ module.exports = function (app, db) {
                     return user;
                 } else {
                     return User.create({
-                        google_id: profile.id
+                        google_id: profile.id,
+                        email: profile.emails[0].value,
+                        name: profile.displayName,
+                        picture: profile._json.picture
                     });
                 }
             })
@@ -47,6 +50,7 @@ module.exports = function (app, db) {
         scope: [
             'https://www.googleapis.com/auth/userinfo.profile',
             'https://www.googleapis.com/auth/userinfo.email'
+
         ]
     }));
 

@@ -28,6 +28,9 @@ module.exports = db.define('user', {
     },
     google_id: {
         type: Sequelize.STRING
+    },
+    picture: {
+        type: Sequelize.STRING
     }
 }, {
     defaultScope: {
