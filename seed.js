@@ -28,7 +28,8 @@ var seedUsers = function () {
         {
             name: 'anonymous',
             email: 'testing@fsa.com',
-            password: 'password'
+            password: 'password',
+            picture: 'anon.jpg'
         }
     ];
 
