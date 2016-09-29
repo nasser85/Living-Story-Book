@@ -15,7 +15,7 @@ module.exports = function (app, db) {
     };
 
     var verifyCallback = function (accessToken, refreshToken, profile, done) {
-
+        console.log(profile);
         User.findOne({
                 where: {
                     facebook_id: profile.id
@@ -26,7 +26,9 @@ module.exports = function (app, db) {
                     return user;
                 } else {
                     return User.create({
-                        facebook_id: profile.id
+                        facebook_id: profile.id,
+                        name: profile.displayName,
+                        picture: "http://graph.facebook.com/" + profile.id +"/picture?type=large"
                     });
                 }
             })
