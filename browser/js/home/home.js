@@ -15,8 +15,5 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('HomeCtrl', function($scope, users, $interval, user) {
-	console.log(users);
     $scope.user = user
-    //console.log(user);
-    console.log("here it is", $scope.user)
 })
