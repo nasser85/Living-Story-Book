@@ -24,15 +24,20 @@ app.factory('StoryFactory', function($http, $state){
 		})
 	}
 
+	storyFactory.fetchUserStories = function(userId) {
+		return $http.get(baseUrl + 'user/' + userId)
+		.then(function (stories) {
+			console.log(stories.data);
+			return stories.data;
+		})
+	}
+
 	storyFactory.publishStory = function(story) {
 		return $http.post(baseUrl, story)
 		.then(function (publishedStory) {
-			// console.log('here it is: ', publishedStory)
-	
 			return publishedStory.data
 		})
 		.then(function (story) {
-			console.log(story);
 			$state.go('singleStory', {storyId: story.id})
 		})
 		

@@ -1,0 +1,45 @@
+<div onLoad="window.location.reload()"class="browse">
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<h3 class="center">Your Published Stories</h3>
+			<p ng-if="!publishedStories.length" class="center">None of your works are published yet.</P>
+	      	<slick class="col s12" infinite="true" slides-to-show="3" slides-to-scroll="3">
+	      		<div ng-repeat="book in publishedStories" id="browse-book" >
+		          <div ui-sref="singleStory({storyId: book.id})" class="card center z-depth-2 mini col s10 offset-s1 hoverable" >
+		          	<div class="card-content">
+		            	<span class="card-title">{{book.title}}</span>
+		            </div>
+		            <div class="card-image">
+		              <img src="{{book.cover_url}}">
+		            </div>
+		            <div class="card-action">
+		              <a>By {{user.name}}</a>
+		            </div>
+		          </div>
+		      </div>
+	          </slick>
+	      </div>
+  	</div>
+  	<div class="row">
+		<div class="col s10 offset-s1">
+			<h3 class="center">Works in Progress</h3>
+			<p ng-if="!unfinishedStories.length" class="center">You currently have no unpublished works.</P>
+			<p ng-if="unfinishedStories.length" class="center">Click on a book to resume work on it.  Remember that other users aren't able to view your unpublished works.</P>
+	      	<slick class="col s12" infinite="true" slides-to-show="3" slides-to-scroll="3">
+	      		<div ng-repeat="book in unfinishedStories" id="browse-book" >
+		          <div  ng-click="resume(book)" ui-sref="create" class="card center z-depth-2 mini col s10 offset-s1 hoverable" >
+		          	<div class="card-content" >
+		            	<span class="card-title">{{book.title}}</span>
+		            </div>
+		            <div class="card-image">
+		              <img src="{{book.cover_url}}">
+		            </div>
+		            <div class="card-action">
+		              <a>By {{user.name}}</a>
+		            </div>
+		          </div>
+		      </div>
+	          </slick>
+	      </div>
+  	</div>
+</div>

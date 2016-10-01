@@ -14,6 +14,10 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('HomeCtrl', function($scope, users, $interval, user) {
-    $scope.user = user
+app.controller('HomeCtrl', function($scope, users, user, $rootScope, $state) {
+    $scope.user = user;
+    $scope.createNew = function() {
+        $rootScope.story = null;
+    }
+
 })

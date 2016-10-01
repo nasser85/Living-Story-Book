@@ -96,6 +96,30 @@ video {
 	.card-image {
 		overflow: hidden;
 	}
+	.mainbuttons {
+		
+		width: 120px;
+		margin: 5%;
+		border-radius: 10%;
+	}
+	#publish {
+		background-color: #6200ea;
+		color: white;
+	}
+	#save {
+		background-color: lightgreen;
+		color: black;
+	}
+	#publish:hover {
+		background-color: white;
+		color: black;
+		
+	}
+	#save:hover {
+		background-color: white;
+		color: black;
+		
+	}
 }
 .genre {
 	background-color: black;
@@ -176,7 +200,11 @@ video {
 
 
 
-#browse {
+.browse {
+	p {
+		color: white;
+		font-size: 20px;
+	}
 	span {
 		font-size: 18px !important;
 	}
@@ -296,7 +324,10 @@ img:focus {
 div:focus {
 	outline:0 !important;
 }
-
+#logged-pic {
+	width: 20px;
+	border-radius: 10%;
+}
 .social:hover {
 	color: purple !important;
 	size: 200;
