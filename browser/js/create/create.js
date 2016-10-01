@@ -42,7 +42,7 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootS
 	}
 	
 	$scope.images = [];
-	for (var i = 0; i < 136; i++) {
+	for (var i = 0; i < 267; i++) {
 
 		$scope.images.push(i.toString() + '.png');
 	}
