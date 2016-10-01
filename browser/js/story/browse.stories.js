@@ -21,7 +21,10 @@ app.controller('BrowseStoriesCtrl', function($scope, authors) {
         writer.stories.forEach(function(story) {
             story.author = writer.name;
             story.authorId = writer.id;
-            $scope.stories.push(story);
+            if (story.status === 'published') {
+               $scope.stories.push(story); 
+            }
+            
         })
     })
     

@@ -10,7 +10,7 @@
 			</div>
 			
 	      	<slick class="col s12" infinite="true" slides-to-show="3" slides-to-scroll="3">
-	      		<div ng-repeat="book in author.stories" id="browse-book" >
+	      		<div ng-repeat="book in author.stories" id="browse-book" ng-if="book.status==='published'" >
 		          <div class="card center z-depth-2 mini col s10 offset-s1 hoverable" ui-sref="singleStory({storyId: book.id})">
 		          	<div class="card-content">
 		            	<span class="card-title">{{book.title}}</span>

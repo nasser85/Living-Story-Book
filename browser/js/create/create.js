@@ -11,17 +11,30 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('CreateCtrl', function($scope, StoryFactory, $state, user) {
+app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootScope) {
 	$scope.messages = ["select a genre for your new story", "design the cover of your story book", "design your book's pages"]
-	$scope.newStory = {
-		title: "My New Story",
-		status: "incomplete",
-		cover_url: "not-available.jpg",
-		genre: "none",
-		userId: 1,
-		pages: null
+	if ($rootScope.story) {
+		$scope.newStory = $rootScope.story;
+		$scope.pages = $scope.newStory.pages;
+		$scope.pos = $scope.pages.length;
+	} else {
+		$scope.newStory = {
+			title: "My New Story",
+			status: "incomplete",
+			cover_url: "not-available.jpg",
+			genre: "none",
+			userId: 1,
+			pages: null
+		}
+		$scope.pages = [
+			{
+				image_url: "not-available.jpg",
+				content: ""
+			}
+		];
+		$scope.pos = 0;
 	}
-	$scope.pos = 0;
+	
 	$scope.author = "anonymous"
 	if (user) {
 		$scope.author = user.name;
@@ -35,12 +48,7 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user) {
 	}
 	
 
-	$scope.pages = [
-		{
-			image_url: "not-available.jpg",
-			content: ""
-		}
-	];
+	
 
 	$scope.genres = [
 		{
@@ -109,17 +117,24 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user) {
 	$scope.publish = function() {
 		$scope.newStory.status = "published";
 		$scope.newStory.pages = $scope.pages;
-		StoryFactory.publishStory($scope.newStory)
+		if ($scope.newStory.id) {
+			StoryFactory.updateStory($scope.newStory)
+		} else {
+			StoryFactory.publishStory($scope.newStory);
+		}
+		$rootScope.pageUpdate = true;
+		
 	}
-	// $scope.publish = function() {
-	// 	StoryFactory.publishStory()
-	// 	.then(function(publishedStory) {
-	// 		if (publishedStory) {
-	// 			$state.go('story', {storyId: publishedStory.id })
-	// 		}
-			
-	// 	});
-	// }
+
+	$scope.saveStory = function() {
+		$scope.newStory.pages = $scope.pages;
+		if ($scope.newStory.id) {
+			StoryFactory.updateStory($scope.newStory)
+		} else {
+			StoryFactory.publishStory($scope.newStory);
+		}
+		$rootScope.pageUpdate = true;
+	}
 
 	$scope.deletePage = function() {
 		$scope.pages.splice($scope.pos-2, 1);

@@ -6,9 +6,10 @@
           <a ui-sref="home" class="brand-logo"><fullstack-logo></fullstack-logo>Radical Reads</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="create">Create</a></li>
-            <li><a ui-sref="your">Your Stories</a></li>
+            <li><a ng-click="createNew()" ui-sref="create">Create</a></li>
+            <li><a ng-if="isLoggedIn()" ui-sref="yourStories">Your Stories</a></li>
             <li><a ui-sref="browseStories">Browse Stories</a></li>
+            <li><img ng-if="isLoggedIn()" id="logged-pic" src="{{user.picture}}"></img></li>
             <li><a ng-if="isLoggedIn()" ng-click="logout()">Logout</a></li>
           </ul>
         </div>
