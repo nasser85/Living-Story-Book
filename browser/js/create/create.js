@@ -12,6 +12,7 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootScope) {
+	$scope.user = user;
 	$scope.messages = ["select a genre for your new story", "design the cover of your story book", "design your book's pages"]
 	if ($rootScope.story) {
 		$scope.newStory = $rootScope.story;
