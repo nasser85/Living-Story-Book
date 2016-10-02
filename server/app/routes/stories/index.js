@@ -62,40 +62,41 @@ router.post('/', function (req, res, next) {
 	.catch(next);
 });
 
-router.put('/:storyId', function (req, res, next) {
-	Story.findOne({
-		where: {
-			id: req.params.storyId
-		}
-	})
-	.then(function (story) {
-		if (story) {
-			return story.update(req.body)
-			.then(function (updatedStory) {
-				res.status(204).send(updatedStory);
-			})
-		} else {
-			res.sendStatus(404);
-		}
-	})
-	.catch(next);
-});
-
 router.delete('/:storyId', function (req, res, next) {
-	Story.findOne({
+	Page.findAll({
 		where: {
-			id: req.params.storyId
+			storyId: req.params.storyId
 		}
 	})
-	.then(function (story) {
-		if (story) {
-			return story.delete()
-			.then(function (deletedStory) {
-				res.sendStatus(200);
+	.then(function (storyPages) {
+		if (storyPages) {
+			return storyPages.forEach(function(storyPage) {
+				storyPage.destroy()
+				.then(function (deletedPage) {
+					res.sendStatus(200);
+				})
 			})
 		} else {
 			res.sendStatus(404);
 		}
+		
+	})
+	.then(function () {
+		return Story.findOne({
+			where: {
+				id: req.params.storyId
+			}
+		})
+		.then(function (story) {
+			if (story) {
+				return story.destroy()
+				.then(function (deletedStory) {
+					res.sendStatus(200);
+				})
+			} else {
+				res.sendStatus(404);
+			}
+		})
 	})
 	.catch(next);
 });

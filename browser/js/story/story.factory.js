@@ -19,7 +19,6 @@ app.factory('StoryFactory', function($http, $state){
 	storyFactory.fetchById = function(storyId) {
 		return $http.get(baseUrl + 'story/' + storyId)
 		.then(function (story) {
-			console.log(story.data);
 			return story.data;
 		})
 	}
@@ -27,7 +26,6 @@ app.factory('StoryFactory', function($http, $state){
 	storyFactory.fetchUserStories = function(userId) {
 		return $http.get(baseUrl + 'user/' + userId)
 		.then(function (stories) {
-			console.log(stories.data);
 			return stories.data;
 		})
 	}
@@ -43,25 +41,23 @@ app.factory('StoryFactory', function($http, $state){
 		
 	}
 
+	storyFactory.delete = function(story) {
+		return $http.delete(baseUrl + story.id)
+		.then(function (deletedStory) {
+			return deletedStory.data;
+		})
+		.then(function(deleted) {
+			$state.go('home');
+		})
+	}
+
 	storyFactory.updateStory = function(story) {
-		return $http.put(baseUrl + story.id, story)
-		.then(function (updatedStory) {
-			return updatedStory.data;
+		var currStory = this;
+		currStory.delete(story)
+		.then(function() {
+			return currStory.publishStory(story);
 		})
 	}
-
-	storyFactory.read = function(text) {
-		return $http.get('http://api.voicerss.org/?key=2e714518e6ba46dd9c4872900e88255c&hl=en-us&src=' + text)
-		.then (function (song) {
-			return song.data;
-		})
-		.then( function(songToPlay) {
-			console.log(songToPlay)
-			
-		})
-	}
-
-
 
 	return storyFactory;
 
