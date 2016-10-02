@@ -17,7 +17,11 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootS
 	if ($rootScope.story) {
 		$scope.newStory = $rootScope.story;
 		$scope.pages = $scope.newStory.pages;
-		$scope.pos = $scope.pages.length;
+		$scope.pages.push({
+				image_url: "not-available.jpg",
+				content: ""
+			});
+		$scope.pos = $scope.pages.length + 1;
 	} else {
 		$scope.newStory = {
 			title: "My New Story",
@@ -107,6 +111,7 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootS
 	$scope.submitPage = function() {
 		$scope.pages.push({image_url: "not-available.jpg", content: ''});
 		$scope.pos = $scope.pages.length + 1;
+		console.log($scope.pages);
 		window.scroll(0,0);
 	}
 	$scope.selectCover = function(url) {
@@ -129,7 +134,10 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootS
 
 	$scope.saveStory = function() {
 		$scope.newStory.pages = $scope.pages;
+		console.log($scope.newStory);
+		console.log($scope.pages);
 		if ($scope.newStory.id) {
+			console.log('updating from save')
 			StoryFactory.updateStory($scope.newStory)
 		} else {
 			StoryFactory.publishStory($scope.newStory);

@@ -33,9 +33,13 @@
           </div>
           </slick>
       </div>
-      <div ui-sref="author({authorId: author.id})" class="author-pic center col s2 offset-s1">
+      <div ng-hide="deletability()" ui-sref="author({authorId: author.id})" class="author-pic center col s2 offset-s1">
         <h5>View More by {{author.name}}</h5>
         <img src="{{author.picture}}"></img>
       </div>
+       <div ng-if="deletability()" id="save" ng-click="deleteStory(newStory)" class="center options col s2 offset-s1">
+          <i class="medium material-icons">delete</i>
+          <p>DELETE</p>
+        </div>
 	</div>
 </div>
