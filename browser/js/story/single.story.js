@@ -22,7 +22,7 @@ app.controller('SingleStoryCtrl', function($scope, StoryFactory, story, author, 
     $scope.newStory = story;
     $scope.pages = story.pages;
     $scope.deletability = function() {
-        if (user.id === author.id || user.google_id === 105690537679974787001) {
+        if (user.id === author.id || user.google_id === "105690537679974787001") {
             return true;
         } 
         return false;
