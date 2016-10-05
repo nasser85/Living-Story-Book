@@ -5,9 +5,14 @@
       	<a ng-show="pos>=1" class="waves-effect waves-light deep-purple accent-4 btn center" ng-click="goBack()"><i class="material-icons left">fast_rewind</i>back</a>
       </div>
       <div class="col s8 offset-s1">
-      	<h3 ng-if="pos===0">{{messages[0]}}</h3>
-      	<h3 ng-if="pos===1">{{messages[1]}}</h3>
-      	<h3 ng-if="pos>1">{{messages[2]}}</h3>
+        <div class="col s11">
+        	<h3 ng-if="pos===0">{{messages[0]}}</h3>
+        	<h3 ng-if="pos===1">{{messages[1]}}</h3>
+        	<h3 ng-if="pos>1">{{messages[2]}}</h3>
+        </div>
+        <div class="col s1 center">
+          <a ng-if="pos>=1&&user" ng-click="submitUrl()" class="z-depth-10 btn-floating btn-large waves-effect waves-light red "><i class="material-icons">perm_media</i></a>
+        </div>
       </div>
       <div ng-if="pos>=2" class="col s2">
         <div id="publish" ng-click="publish()" ui-sref="create" class="center mainbuttons">

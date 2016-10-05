@@ -13,8 +13,9 @@ app.config(function ($stateProvider) {
 
 app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootScope) {
 	$scope.user = user;
+	$scope.submission = {};
 	$scope.message = null;
-	$scope.messages = ["select a genre for your new story", "design the cover of your story book", "design your book's pages", "Please wait while your book is published.", "Please wait while your book is saved."]
+	$scope.messages = ["select a genre for your new story", "design the cover of your story", "design your book's pages", "Please wait while your book is published.", "Please wait while your book is saved.", 'Enter the URL of the picture that you would like to use.']
 	if ($rootScope.story) {
 		$scope.newStory = $rootScope.story;
 		$scope.pages = $scope.newStory.pages;
@@ -145,6 +146,14 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootS
 			}
 			$rootScope.pageUpdate = true;
 		}
+	}
+
+	$scope.submitUrl = function() {
+		$scope.message = $scope.messages[5];
+		$scope.submission.image = "";
+	}
+	$scope.cancelSubmission = function() {
+		$scope.message = null;
 	}
 
 	$scope.deletePage = function() {
