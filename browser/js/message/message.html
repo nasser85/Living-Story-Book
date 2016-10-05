@@ -1,0 +1,10 @@
+<div id="message-loader">
+	<h4>{{message}}</h4>
+	<div ng-if="message!=='Are you sure you want to delete this book?'" class="progress">
+      <div class="indeterminate"></div>
+  	</div>
+  	<div ng-if="message==='Are you sure you want to delete this book?'">
+  		<a ng-click="deleteStory(newStory)" class="waves-effect green btn"><i class="material-icons left">delete</i>DELETE</a>
+  		<a ng-click="cancelDelete()" class="waves-effect red btn"><i class="material-icons left">not_interested</i>CANCEL</a>
+  	</div>
+</div>
