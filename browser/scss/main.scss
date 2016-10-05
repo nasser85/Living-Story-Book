@@ -346,15 +346,15 @@ div:focus {
 }
 
 #message-loader {
-	padding-top: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
 	text-align: center;
 	position: absolute;
 	h4 {
+		margin-top: 50px;
 		color: white;
 	}
-	
+	color: white;
 	background-color: #6200ea;
 	z-index: 10;
 	width: 60%;
@@ -362,6 +362,10 @@ div:focus {
 	margin-left: 20%;
 	margin-top: 10%;
 	border-radius: 10px;
+}
+.card {
+	overflow: hidden !important;
+
 }
 
 
