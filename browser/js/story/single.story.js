@@ -21,6 +21,7 @@ app.controller('SingleStoryCtrl', function($scope, StoryFactory, story, author, 
 	$scope.author = author;
     $scope.newStory = story;
     $scope.pages = story.pages;
+    $scope.message = null;
     $scope.deletability = function() {
         if (user.id === author.id || user.google_id === "105690537679974787001") {
             return true;
@@ -31,8 +32,18 @@ app.controller('SingleStoryCtrl', function($scope, StoryFactory, story, author, 
     var voice = window.speechSynthesis;
     
     $scope.deleteStory = function(story) {
-        $rootScope.pageUpdate = true;
-        StoryFactory.delete(story);
+        if ($scope.message !== "Deleting book...") {
+            if (!$scope.message) {
+                $scope.message = "Are you sure you want to delete this book?";
+            } else {
+                $scope.message = "Deleting book...";
+                $rootScope.pageUpdate = true;
+                StoryFactory.delete(story);
+            }
+        } 
+    }
+    $scope.cancelDelete = function() {
+        $scope.message = null;
     }
     $scope.readAloud = function(text) {
 
