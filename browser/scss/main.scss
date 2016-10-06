@@ -362,6 +362,9 @@ div:focus {
 	margin-left: 20%;
 	margin-top: 10%;
 	border-radius: 10px;
+	.input-field {
+		margin-top: -5%;
+	}
 }
 .card {
 	overflow: hidden !important;
