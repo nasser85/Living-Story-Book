@@ -4,13 +4,13 @@ app.config(function ($stateProvider) {
         templateUrl: 'js/author/author.html',
         controller: 'AuthorCtrl',
         resolve: {
-        	author: function(UserFactory, $stateParams) {
+        	authorUser: function(UserFactory, $stateParams) {
         		return UserFactory.fetchById($stateParams.authorId);
         	}
         }
     });
 });
 
-app.controller('AuthorCtrl', function($scope, author) {
-	$scope.author = author;
+app.controller('AuthorCtrl', function($scope, authorUser) {
+	$scope.author = authorUser;
 })

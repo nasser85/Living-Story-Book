@@ -149,9 +149,11 @@ app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootS
 	}
 
 	$scope.submitUrl = function() {
+
 		document.getElementById("input_text").focus();
 		$scope.message = $scope.messages[5];
 		$scope.submission.image = "";
+		window.scroll(0, 0);
 	}
 	$scope.cancelSubmission = function() {
 		$scope.message = null;
