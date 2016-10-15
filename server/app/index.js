@@ -2,9 +2,12 @@
 var path = require('path');
 var express = require('express');
 var app = express();
+var compression = require('compression');
 
 module.exports = function (db) {
 
+    //compress
+    app.use(compression());
     // Pass our express application pipeline into the configuration
     // function located at server/app/configure/index.js
     require('./configure')(app, db);
