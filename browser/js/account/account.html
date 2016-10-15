@@ -1,6 +1,6 @@
 <div id="account">
 	<div class="row">
-		<div class="col s2">
+		<div class="col s8 m4 l2">
 			<div class="center col s12">
 				<img id="bookpic" class="center" src="{{user.picture}}"></img>
 				
@@ -9,18 +9,18 @@
 				<h5 class="center">{{user.name}}</h5>
 			</div>
 		</div>
-		<div class="center col s10">
-			<div ng-click="createNew()" ui-sref="create" class="options col s3">
+		<div class="center col s12 m8 l10">
+			<div ng-click="createNew()" ui-sref="create" class="options col m12 l3">
 				<i class="large material-icons">library_add</i>
 				<p>Create New Story</p>
 
 			</div>
-			<div ui-sref="yourStories" class="options col s3">
+			<div ui-sref="yourStories" class="options col m12 l3">
 				<i class="large material-icons">library_books</i>
 				<p>View Your Stories</p>
 
 			</div>
-			<div  ui-sref="browseStories" class="options col s3">
+			<div  ui-sref="browseStories" class="options col m12 l3">
 				<i class="large material-icons">view_column</i>
 				<p>Browse All Stories</p>
 

@@ -15,7 +15,23 @@ app.controller('BrowseStoriesCtrl', function($scope, authors) {
 	$scope.authors = authors.filter(function(author) {
         return author.stories.length;
     })
-    
+    $scope.breakpoints = [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+    }];
     $scope.stories = [];
     $scope.authors.forEach(function(writer) {
         writer.stories.forEach(function(story) {
