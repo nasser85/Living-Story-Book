@@ -33,23 +33,7 @@
     <div id="main" ui-view></div>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.7/webcomponents-lite.min.js"></script>
-<script>
-$(document).ready(function() {
-    
-    $(".button-collapse").sideNav();
-})
-    var background = document.body;
-        
-        background.style.backgroundPosition = "700px, 700px";
-        var begin= new Date().getTime();
-        setInterval(function() {
-            var x= Math.floor((new Date().getTime()-begin)/50);
-            background.style.backgroundPositionY =  x +'px';
-           
-        }, 50);
 
-        
-</script>
 </body>
 
 </html>
