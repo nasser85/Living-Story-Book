@@ -18,7 +18,10 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('SingleStoryCtrl', function($scope, StoryFactory, story, author, user, $rootScope) {
-	$scope.author = author;
+    document.body.style.background = "url(background.jpg)";
+    document.body.style.backgroundRepeat = "repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    $scope.author = author;
     $scope.newStory = story;
     $scope.pages = story.pages;
     $scope.message = null;

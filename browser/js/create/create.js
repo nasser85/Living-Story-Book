@@ -12,6 +12,7 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('CreateCtrl', function($scope, StoryFactory, $state, user, $rootScope) {
+	document.body.style.background = "url(background.jpg)";
 	$scope.user = user;
 	$scope.submission = {};
 	$scope.message = null;

@@ -12,7 +12,7 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('YourStoriesCtrl', function($scope, user, $rootScope, $state, AuthService) {
-	
+	document.body.style.background = "url(background.jpg)";
     if ($rootScope.pageUpdate) {
         window.location.reload();
         $rootScope.pageUpdate = false;
