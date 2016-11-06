@@ -12,7 +12,10 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('BrowseStoriesCtrl', function($scope, authors) {
-	$scope.authors = authors.filter(function(author) {
+	document.body.style.background = "url(background.jpg)";
+    document.body.style.backgroundRepeat = "repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    $scope.authors = authors.filter(function(author) {
         return author.stories.length;
     })
     $scope.breakpoints = [

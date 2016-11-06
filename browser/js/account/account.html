@@ -1,12 +1,12 @@
 <div id="account">
 	<div class="row">
-		<div class="col s8 m4 l2">
+		<div ng-click="logout()" id="account-pic" class="col s8 m4 l2">
 			<div class="center col s12">
 				<img id="bookpic" class="center" src="{{user.picture}}"></img>
-				
 			</div>
 			<div class="center col s12">
 				<h5 class="center">{{user.name}}</h5>
+				<h6>logout</h6>
 			</div>
 		</div>
 		<div class="center col s12 m8 l10">
