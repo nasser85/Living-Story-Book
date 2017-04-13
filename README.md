@@ -10,16 +10,37 @@ This is an application similar to "Story Bird," but geared toward more novice us
 https://radicalreads.herokuapp.com/
 
 ## Getting Started
-1) Fork and clone the repository.  
-2) npm Install  
-3) Bower Install  
-4) Run node seed (note: you might have to manually create a database named "story-book")  
-5) npm start  
-6) run localhost:1337 in the browser and that's it!  
+
+Fork and clone the repository.  
+
+```bash
+npm install
+```
+```bash
+bower install
+```
+```bash
+gulp build && gulp
+```
+```bash
+npm start
+``` 
+run localhost:1337 in the browser and that's it!  
 
 ## Contributing
-1) Fork it!  
-2) Create your feature branch: git checkout -b my-new-feature  
-3) Commit your changes: git commit -m 'Add some feature'  
-4) Push to the branch: git push origin my-new-feature  
-5) Submit a pull request  
+
+Fork it!  
+Create your feature branch:   
+```bash
+    git checkout -b my-new-feature
+```
+Commit your changes: 
+```bash
+   git commit -m 'Add some feature'
+```
+Push to the branch: 
+```bash
+    git push origin my-new-feature
+```
+Submit a pull request  
+
